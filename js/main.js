@@ -16,6 +16,8 @@ $('#reset').on('click', function(){
     player_two_score = -1
     updated_score = 0
     deuce = false;
+    $('#play_area button').show();
+    $('#reset, deuce').hide();
     $('playerone score').html('0');
     $('playertwo score').html('0');
     $('deuce').html('');
@@ -32,6 +34,8 @@ $('button').not('#reset').on('click', function(){
         }
         if((player_one_score >= 4 || player_two_score >= 4) || 
         (player_one_score > 2 && player_two_score <= 1 || player_two_score > 2 && player_one_score <= 1)){
+            $('#play_area button').hide();
+            $('#reset, deuce').show();
             $('deuce').html($(this).parent().prop('nodeName') + ' IS THE WINNER!');
         }else{
             $(this).parent().children('score').html(scores[updated_score]);
@@ -49,6 +53,7 @@ $('button').not('#reset').on('click', function(){
     
     if(player_one_score == 3 && player_two_score == 3){
         $('score').html('-');
+        $('deuce').show();
         $('deuce').html('DEUCE!');
         deuce = true;
     }

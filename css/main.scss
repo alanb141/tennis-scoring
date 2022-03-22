@@ -67,8 +67,28 @@ playerone, playertwo {
         text-shadow: 0 0 3px black;
     }
 }
+#reset, deuce{
+    display: none;
+}
 deuce{
     font-weight: 600;
-    display: block;
     padding: 1.563rem 0;
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		text-shadow: 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		text-shadow: 0 8px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		text-shadow: 0 0 rgba(0, 0, 0, 0);
+	}
 }
